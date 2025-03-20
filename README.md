@@ -27,3 +27,5 @@ An **Inventory Management System** built with **React** and **Tailwind CSS**, de
 
 
 *Built with ❤️ using React and Tailwind CSS*
+
+🚀 **Live Demo:** [View Here](https://inventory-rouge-rho.vercel.app/)
