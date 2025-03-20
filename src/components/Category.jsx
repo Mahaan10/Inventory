@@ -1,7 +1,9 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { useProductsContext } from "../context/ProductsContext";
 
-function Category({ setCategories }) {
+function Category() {
+  const { setCategories } = useProductsContext();
   const [isOpen, setIsOpen] = useState(false);
   const [categoryFormData, setCategoryFormData] = useState({
     title: "",
@@ -66,7 +68,7 @@ function Category({ setCategories }) {
               Cancel
             </button>
             <button
-              className="cursor-pointer flex-1 text-slate-200 bg-[#876445] rounded-xl py-2"
+              className="cursor-pointer flex-1 text-slate-200 bg-dark-wood rounded-xl py-2"
               onClick={addNewCategoryHandler}
             >
               Add

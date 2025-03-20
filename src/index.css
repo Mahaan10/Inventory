@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+
+@theme {
+  --color-dark-khaki: #3c2a21;
+  --color-licorice: #1a120b;
+  --color-dark-wood: #876445;
+}
