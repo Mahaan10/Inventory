@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useProductsContext } from "../context/ProductsContext";
 
 const EditProductForm = ({ product, onSave }) => {
+  const { categories } = useProductsContext();
   const [editedProduct, setEditedProduct] = useState(product);
 
   const handleChange = (e) => {
@@ -25,13 +27,18 @@ const EditProductForm = ({ product, onSave }) => {
       />
 
       <label className="text-white">Category</label>
-      <input
-        type="text"
+      <select
         name="category"
         value={editedProduct.category}
         onChange={handleChange}
         className="p-2 rounded bg-dark-khaki text-white"
-      />
+      >
+        {categories.map((category) => (
+          <option value={category.title} key={category.id}>
+            {category.title}
+          </option>
+        ))}
+      </select>
 
       <label className="text-white">Quantity</label>
       <input

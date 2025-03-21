@@ -53,7 +53,7 @@ function ProductsList() {
     <section>
       <div className="mb-6 ">
         <h2 className="text-xl text-slate-200 font-bold mb-2">Filters</h2>
-        <form className="bg-stone-700 p-4 rounded-xl flex flex-col gap-y-[27px]">
+        <form className="bg-stone-700 py-2 px-4 rounded-xl flex flex-col gap-y-[27px]">
           <div className="flex justify-between items-center gap-x-4">
             <label htmlFor="Search" className="block mb-1 text-slate-200">
               Search
@@ -120,12 +120,18 @@ function ProductsList() {
         {filteredProducts.length > 0 && (
           <Table>
             <Table.Header>
-              <th className="pl-1">#</th>
-              <th className="py-1.5">Title</th>
-              <th className="py-1.5">Category</th>
-              <th className="py-1.5">Quantity</th>
-              <th className="py-1.5">Date</th>
-              <th className="py-1.5">Operations</th>
+              <th className="text-center whitespace-nowrap py-2 px-4">#</th>
+              <th className="text-center whitespace-nowrap py-2 px-4">Title</th>
+              <th className="text-center whitespace-nowrap py-2 px-4">
+                Category
+              </th>
+              <th className="text-center whitespace-nowrap py-2 px-4">
+                Quantity
+              </th>
+              <th className="text-center whitespace-nowrap py-2 px-4">Date</th>
+              <th className="text-center whitespace-nowrap py-2 px-4">
+                Operations
+              </th>
             </Table.Header>
             <Table.Body>
               {filteredProducts.map((product, index) => (
@@ -175,12 +181,20 @@ export default ProductsList;
 const ProductsRow = ({ index, product, editHandler, deleteHandler }) => {
   return (
     <Table.Row>
-      <td className="pl-1">{index + 1}</td>
-      <td>{product.title}</td>
-      <td>{product.category}</td>
-      <td>{product.quantity}</td>
-      <td>{new Date(product.createdAt).toLocaleDateString()}</td>
-      <td className="flex items-center justify-center gap-x-8 py-2">
+      <td className="text-center whitespace-nowrap py-2 px-4">{index + 1}</td>
+      <td className="text-center whitespace-nowrap py-2 px-4">
+        {product.title}
+      </td>
+      <td className="text-center whitespace-nowrap py-2 px-4">
+        {product.category}
+      </td>
+      <td className="text-center whitespace-nowrap py-2 px-4">
+        {product.quantity}
+      </td>
+      <td className="text-center whitespace-nowrap py-2 px-4">
+        {new Date(product.createdAt).toLocaleDateString()}
+      </td>
+      <td className="space-x-4 text-center whitespace-nowrap py-2 px-4">
         <button
           className="cursor-pointer text-neutral-300 outline-none bg-emerald-900 py-1 px-2 rounded-lg"
           onClick={() => editHandler(product)}
@@ -189,7 +203,7 @@ const ProductsRow = ({ index, product, editHandler, deleteHandler }) => {
         </button>
         <button
           onClick={() => deleteHandler(product)}
-          className="cursor-pointer text-neutral-300 outline-none bg-red-900  py-1 px-2 rounded-lg"
+          className="cursor-pointer text-neutral-300 outline-none bg-red-900 py-1 px-2 rounded-lg"
         >
           Delete
         </button>
